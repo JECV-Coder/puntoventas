@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1120.0" style="-fx-background-color: Transparent;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ventanaVentas.ControllerVentas">
+   <children>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="60.0" prefWidth="1102.0" style="-fx-background-color: #e55039;" AnchorPane.bottomAnchor="640.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="60.0" prefWidth="1120.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Separator prefWidth="200.0" visible="false" />
+                  <Separator prefWidth="200.0" visible="false" />
+                  <ImageView fitHeight="60.0" fitWidth="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../principal/images/icon_venta.png" />
+                     </image>
+                  </ImageView>
+                  <Separator prefWidth="200.0" visible="false" />
+                  <Separator prefWidth="200.0" visible="false" />
+                  <ImageView fx:id="bntSalir" fitHeight="60.0" fitWidth="191.0" onMouseClicked="#botonMenu" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../principal/images/icon_menu.png" />
+                     </image>
+                  </ImageView>
+                  <Separator prefWidth="200.0" visible="false" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="paneVentas" layoutX="16.0" layoutY="82.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #2c3e50;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+         <children>
+            <JFXTextField fx:id="cajaBuscarProducto" focusColor="#e55039" layoutX="317.0" layoutY="78.0" onKeyPressed="#VerDetalles" prefHeight="31.0" prefWidth="200.0" promptText="Id del producto a buscar" unFocusColor="#797474" AnchorPane.bottomAnchor="530.0" AnchorPane.leftAnchor="200.0" />
+            <JFXTextField fx:id="cajaCantidadVenta" focusColor="#e55039" layoutX="675.0" layoutY="199.0" prefHeight="31.0" prefWidth="200.0" promptText="Cantidad a vender" unFocusColor="#797474" AnchorPane.bottomAnchor="460.0" AnchorPane.leftAnchor="200.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <Label fx:id="labelBuscarProducto" layoutX="44.0" layoutY="78.0" prefHeight="31.0" prefWidth="131.0" text="Buscar Id" textFill="#e55039" AnchorPane.bottomAnchor="520.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="70.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelCantidadVenta" layoutX="44.0" layoutY="168.0" prefHeight="31.0" prefWidth="155.0" text="Cantidad" textFill="#e55039" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="40.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableCarrito" layoutX="26.0" layoutY="274.0" prefHeight="340.0" prefWidth="1058.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="300.0">
+               <columns>
+                  <TableColumn prefWidth="139.0" text="Id" />
+                  <TableColumn prefWidth="479.0" text="Nombre" />
+                  <TableColumn prefWidth="170.0" text="Cantidad" />
+                  <TableColumn prefWidth="144.0" text="Precio Unitario" />
+                  <TableColumn prefWidth="147.0" text="Subtotal" />
+               </columns>
+            </TableView>
+            <ImageView fx:id="butttonSearch" fitHeight="25.0" fitWidth="32.0" layoutX="407.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <image>
+                  <Image url="@../../../../Documents/3er%20Cuatrimestre/Programacion%20Visual/PuntoDeVentas/src/principal/images/icon_search.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonAgregarCarrito" layoutX="264.0" layoutY="201.0" mnemonicParsing="false" style="-fx-background-color: #e55039;" text="Agregar al carrito">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="buttonFinalizarVenta" layoutX="264.0" layoutY="251.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="136.0" style="-fx-background-color: #e55039;" text="Finalizar Venta">
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Label fx:id="labelDetalles" layoutX="595.0" layoutY="25.0" prefHeight="31.0" prefWidth="131.0" text="Detalles" textFill="#e55039" AnchorPane.topAnchor="25.0">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelIdDetalle" layoutX="595.0" layoutY="90.0" prefHeight="31.0" prefWidth="77.0" text="Id" textFill="#e55039" AnchorPane.topAnchor="70.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelNombreDetalle" layoutX="595.0" layoutY="129.0" prefHeight="31.0" prefWidth="77.0" text="Nombre" textFill="#e55039" AnchorPane.topAnchor="120.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelPrecioDetalle" layoutX="595.0" layoutY="171.0" prefHeight="31.0" prefWidth="77.0" text="Precio" textFill="#e55039" AnchorPane.topAnchor="170.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelStockDetalle" layoutX="595.0" layoutY="213.0" prefHeight="31.0" prefWidth="77.0" text="Stock" textFill="#e55039" AnchorPane.topAnchor="220.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="cajaIdDetalle" focusColor="#e55039" layoutX="680.0" layoutY="72.0" prefHeight="31.0" prefWidth="200.0" unFocusColor="#797474" AnchorPane.topAnchor="60.0" />
+            <JFXTextField fx:id="cajaNombreDetalle" focusColor="#e55039" layoutX="680.0" layoutY="119.0" prefHeight="31.0" prefWidth="200.0" unFocusColor="#797474" AnchorPane.topAnchor="110.0" />
+            <JFXTextField fx:id="cajaPrecioDetalle" focusColor="#e55039" layoutX="680.0" layoutY="170.0" prefHeight="31.0" prefWidth="200.0" unFocusColor="#797474" AnchorPane.topAnchor="160.0" />
+            <JFXTextField fx:id="cajaStockDetalle" focusColor="#e55039" layoutX="680.0" layoutY="217.0" prefHeight="31.0" prefWidth="200.0" unFocusColor="#797474" AnchorPane.topAnchor="210.0" />
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="puntaProductos" fitHeight="18.0" fitWidth="60.0" layoutX="412.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../principal/images/icon_flecha.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
